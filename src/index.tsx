@@ -3,7 +3,6 @@ import { Form, ActionPanel, SubmitFormAction, showToast, ToastStyle } from "@ray
 import { getIssues, getProjects, postTimeLog } from "./controllers";
 import { toSeconds } from "./utils";
 import { Project, Issue, TimeWorked } from "./types";
-import { isValidIssueBody, isValidProjectBody } from "./validators";
 
 export default function Command() {
   const [projects, setProjects] = React.useState<Project[]>([]);
