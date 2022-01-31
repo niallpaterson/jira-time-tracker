@@ -56,6 +56,7 @@ export default function Command() {
         const issues = await getIssues(selectedProject);
         if (issues) {
           setIssues(issues);
+          setSelectedIssue(issues.at(-1));
         }
       };
       fetchIssues();
