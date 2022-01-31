@@ -8,7 +8,7 @@ export const getProjects = async () => {
 };
 
 export const getIssues = async (projectId?: string) => {
-  const endpoint = `/rest/api/3/search?fields=summary,parent,project&maxResults=100&startAt=0&jql=${
+  const endpoint = `/rest/api/3/search?fields=summary,parent,project&maxResults=500&startAt=0&jql=${
     projectId ? "project=" + projectId : ""
   }`;
   const response = await jiraRequest(endpoint);
