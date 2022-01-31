@@ -11,7 +11,7 @@ const headers = {
   Authorization: `Basic ${Buffer.from(`${prefs.username}:${prefs.token}`).toString("base64")}`,
 };
 
-export const jiraRequest = async <T>(endpoint: string, requestBody?: string, method: "GET" | "POST" = "GET") => {
+export const jiraRequest = async (endpoint: string, requestBody?: string, method: "GET" | "POST" = "GET") => {
   const opts = {
     headers,
     method,
