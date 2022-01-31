@@ -1,46 +1,40 @@
 export type CommandForm = {
-  projectId?: string;
+  projectId: string;
   issueId: string;
   startedAt?: string;
-  hours?: number;
-  minutes?: number;
-  seconds?: number;
+  hours?: string;
+  minutes?: string;
+  seconds?: string;
   description?: string;
-}
-
-export type Project = {
-  label: string;
-  key: string;
 };
 
-export type Issue = {
+export type Project = {
+  name: string;
   key: string;
-  description: string;
 };
 
 export type Preferences = {
   domain: string;
   token: string;
   username: string;
-}
+};
 
-export type IssueResponse = {
+export type Issue = {
   key: string;
   fields: {
     summary: string;
-  }
-}
+  };
+};
 
 export type IssueBody = {
-  issues: IssueResponse[];
-}
+  issues: Issue[];
+} & unknown;
 
 export type ProjectBody = {
-  values: {key: string, name: string}[]
-}
+  values: { key: string; name: string }[];
+} & unknown;
 
-export type TimeWorked = {
-  seconds: number;
-  minutes: number;
-  hours: number;
-};
+export type JiraErrorResponseBody = {
+  message?: string;
+  messages?: string[];
+} & unknown;
